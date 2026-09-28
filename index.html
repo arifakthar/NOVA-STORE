@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA — Modern E-Commerce</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="bg-circle circle-one"></div>
+    <div class="bg-circle circle-two"></div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            NOVA<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#shop">Shop</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+
+        <div class="nav-actions">
+
+            <!-- SEARCH -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+
+                <button
+                    class="icon-btn"
+                    type="button"
+                    onclick="document.getElementById('searchInput').focus()">
+                    🔍
+                </button>
+
+            </div>
+
+
+            <!-- CART -->
+            <div class="cart-wrapper">
+
+                <button
+                    class="icon-btn"
+                    type="button"
+                    onclick="window.location.href='cart.html'">
+                    🛒
+                </button>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main id="home">
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    ✦ NEW COLLECTION 2026
+                </span>
+
+                <h1>
+                    Discover Your
+                    <span class="gradient-text">
+                        Style.
+                    </span>
+                </h1>
+
+                <p>
+                    Explore premium products designed
+                    for your everyday lifestyle.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#shop"
+                        class="primary-btn">
+                        Shop Now →
+                    </a>
+
+                    <a
+                        href="#shop"
+                        class="secondary-btn">
+                        Explore Collection
+                    </a>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+
+                        <h3>500+</h3>
+
+                        <p>
+                            Products
+                        </p>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <h3>10K+</h3>
+
+                        <p>
+                            Customers
+                        </p>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <h3>4.9</h3>
+
+                        <p>
+                            Rating ★
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO PRODUCT -->
+            <div class="hero-product">
+
+                <div class="product-glow"></div>
+
+                <div class="product-card-large">
+
+                    <div class="product-emoji">
+                        👟
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card float-one">
+
+                    <small>
+                        ⚡ Best Seller
+                    </small>
+
+                    <strong>
+                        Air Runner X
+                    </strong>
+
+                </div>
+
+
+                <div class="floating-card float-two">
+
+                    <small>
+                        ⭐ Rating
+                    </small>
+
+                    <strong>
+                        4.9 / 5
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BRANDS -->
+        <section class="brand-strip">
+
+            <span>NIKE</span>
+            <span>ADIDAS</span>
+            <span>APPLE</span>
+            <span>SONY</span>
+            <span>CANON</span>
+            <span>LEVI'S</span>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+        <section
+            id="shop"
+            class="section">
+
+            <div class="section-heading">
+
+                <span>
+                    OUR COLLECTION
+                </span>
+
+                <h2>
+                    Trending Products
+                </h2>
+
+                <p>
+                    Discover products made for modern life.
+                </p>
+
+            </div>
+
+
+            <div class="product-grid">
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <span>
+                            👟
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Air Runner X
+                        </h3>
+
+                        <p>
+                            Premium running shoes
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ₹2,499
+                            </span>
+
+                            <button
+                                class="add-btn"
+                                onclick="addToCart('Air Runner X', 2499)">
+
+                                Add
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 2 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <span>
+                            ⌚
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Nova Smart Watch
+                        </h3>
+
+                        <p>
+                            Smart technology for you
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ₹3,999
+                            </span>
+
+                            <button
+                                class="add-btn"
+                                onclick="addToCart('Nova Smart Watch', 3999)">
+
+                                Add
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 3 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <span>
+                            🎧
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sonic Pro Headphones
+                        </h3>
+
+                        <p>
+                            Immersive premium audio
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ₹2,999
+                            </span>
+
+                            <button
+                                class="add-btn"
+                                onclick="addToCart('Sonic Pro Headphones', 2999)">
+
+                                Add
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 4 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <span>
+                            🎒
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Urban Travel Bag
+                        </h3>
+
+                        <p>
+                            Stylish everyday travel bag
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ₹1,799
+                            </span>
+
+                            <button
+                                class="add-btn"
+                                onclick="addToCart('Urban Travel Bag', 1799)">
+
+                                Add
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section
+            id="about"
+            class="section">
+
+            <div class="about">
+
+                <div class="about-box">
+
+                    <h2>
+                        Designed for
+                        <span class="gradient-text">
+                            Modern Life.
+                        </span>
+                    </h2>
+
+                    <p>
+                        We bring together quality, style
+                        and technology to create a shopping
+                        experience that feels simple,
+                        fast and beautiful.
+                    </p>
+
+                </div>
+
+
+                <div class="about-features">
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ⚡
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Fast Experience
+                            </h3>
+
+                            <p>
+                                Smooth and responsive shopping.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🛍️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Quality Products
+                            </h3>
+
+                            <p>
+                                Products selected for modern users.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🔒
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Secure Shopping
+                            </h3>
+
+                            <p>
+                                A simple and secure experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer id="contact">
+
+            <div class="footer-logo">
+                NOVA.
+            </div>
+
+            <p>
+                © 2026 NOVA STORE. All rights reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+
+    <!-- SEARCH SCRIPT -->
+    <script>
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                const searchText =
+                    this.value
+                        .toLowerCase()
+                        .trim();
+
+
+                const products =
+                    document.querySelectorAll(
+                        ".product-card"
+                    );
+
+
+                products.forEach(
+                    function (product) {
+
+                        const productName =
+                            product
+                                .querySelector("h3")
+                                .textContent
+                                .toLowerCase();
+
+
+                        if (
+                            productName.includes(
+                                searchText
+                            )
+                        ) {
+
+                            product.style.display =
+                                "";
+
+                        } else {
+
+                            product.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
