@@ -1,0 +1,367 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA STORE | Product Details</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            NOVA<span>.</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#shop">Shop</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="cart.html" class="cart-btn">
+                🛒 Cart
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- PRODUCT DETAILS -->
+
+    <main class="product-details-page">
+
+        <div class="product-details-container">
+
+            <!-- IMAGE -->
+
+            <div class="product-details-image">
+
+                <div class="product-big-image" id="productImage">
+                    👟
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="product-details-info">
+
+                <span class="product-category">
+                    PREMIUM COLLECTION
+                </span>
+
+                <h1 id="productTitle">
+                    Air Runner X
+                </h1>
+
+                <div class="product-rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.8 (124 Reviews)</span>
+                </div>
+
+                <div class="product-price" id="productPrice">
+                    ₹2,499
+                </div>
+
+                <p class="product-description" id="productDescription">
+                    Experience next-level comfort and style with the Air Runner X.
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <div class="product-features">
+
+                    <div>
+                        ✓ Premium Quality
+                    </div>
+
+                    <div>
+                        ✓ Lightweight Design
+                    </div>
+
+                    <div>
+                        ✓ All-Day Comfort
+                    </div>
+
+                    <div>
+                        ✓ Modern Style
+                    </div>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="quantity-section">
+
+                    <span>Quantity</span>
+
+                    <div class="quantity-control">
+
+                        <button onclick="changeProductQuantity(-1)">
+                            −
+                        </button>
+
+                        <span id="productQuantity">
+                            1
+                        </span>
+
+                        <button onclick="changeProductQuantity(1)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="product-actions">
+
+                    <button
+                        class="add-product-btn"
+                        onclick="addProductToCart()">
+
+                        🛒 Add to Cart
+
+                    </button>
+
+                    <a
+                        href="cart.html"
+                        class="buy-product-btn">
+
+                        View Cart
+
+                    </a>
+
+                </div>
+
+
+                <!-- DELIVERY -->
+
+                <div class="delivery-info">
+
+                    <div>
+
+                        🚚 <strong>Free Delivery</strong>
+
+                        <br>
+
+                        <span>
+                            On orders above ₹999
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        🔄 <strong>Easy Returns</strong>
+
+                        <br>
+
+                        <span>
+                            7-day return policy
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            NOVA<span>.</span>
+        </div>
+
+        <p>
+            Modern style. Smart shopping.
+        </p>
+
+        <p>
+            © 2026 NOVA STORE. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- MAIN JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+    <!-- PRODUCT JAVASCRIPT -->
+
+    <script>
+
+        let productQuantity = 1;
+
+
+        const products = {
+
+            shoe: {
+
+                name: "Air Runner X",
+
+                price: 2499,
+
+                emoji: "👟",
+
+                description:
+                    "Experience next-level comfort and style with the Air Runner X. Designed for everyday movement with a modern premium look."
+
+            },
+
+
+            watch: {
+
+                name: "Nova Smart Watch",
+
+                price: 3999,
+
+                emoji: "⌚",
+
+                description:
+                    "Stay connected and track your everyday activities with the Nova Smart Watch, designed for a modern lifestyle."
+
+            },
+
+
+            headphones: {
+
+                name: "Sonic Pro Headphones",
+
+                price: 2999,
+
+                emoji: "🎧",
+
+                description:
+                    "Enjoy immersive sound and comfortable listening with the Sonic Pro Headphones. Perfect for music and everyday use."
+
+            },
+
+
+            bag: {
+
+                name: "Urban Travel Bag",
+
+                price: 1799,
+
+                emoji: "🎒",
+
+                description:
+                    "A stylish and practical travel companion with enough space for your everyday essentials."
+
+            }
+
+        };
+
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const productKey =
+            params.get("product") || "shoe";
+
+
+        const product =
+            products[productKey] || products.shoe;
+
+
+        document.getElementById(
+            "productTitle"
+        ).textContent =
+            product.name;
+
+
+        document.getElementById(
+            "productPrice"
+        ).textContent =
+            "₹" +
+            product.price.toLocaleString("en-IN");
+
+
+        document.getElementById(
+            "productDescription"
+        ).textContent =
+            product.description;
+
+
+        document.getElementById(
+            "productImage"
+        ).textContent =
+            product.emoji;
+
+
+        function changeProductQuantity(amount) {
+
+            productQuantity += amount;
+
+
+            if (productQuantity < 1) {
+
+                productQuantity = 1;
+
+            }
+
+
+            document.getElementById(
+                "productQuantity"
+            ).textContent =
+                productQuantity;
+
+        }
+
+
+        function addProductToCart() {
+
+            for (
+                let i = 0;
+                i < productQuantity;
+                i++
+            ) {
+
+                addToCart(
+                    product.name,
+                    product.price
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
+localStorage.getItem("novaCart")
